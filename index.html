@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>蔷薇 - 后端开发工程师</title>
+<title>RoseQ - 后端开发工程师</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--sidebar-bg:#2c3e50;--sidebar-text:#ecf0f1;--accent:#3498db;--accent-dark:#2980b9;--main-bg:#f5f7fa;--card-bg:#fff;--text-primary:#2c3e50;--text-secondary:#7f8c8d;--border-color:#bdc3c7;--shadow:0 2px 8px rgba(0,0,0,.1)}
@@ -15,14 +15,16 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
 .sidebar-section h3{font-size:14px;text-transform:uppercase;letter-spacing:2px;color:#95a5a6;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid #3d566e}
 .contact-item{display:flex;align-items:center;margin-bottom:10px;font-size:14px}
 .contact-item .icon{margin-right:10px;font-size:16px;width:20px;text-align:center}
-.skill-tags{display:flex;flex-wrap:wrap;gap:8px}
-.skill-tag{background:#3d566e;color:#bdc3c7;padding:4px 12px;border-radius:20px;font-size:12px;white-space:nowrap;transition:background .2s}
+.skill-group{margin-bottom:14px}
+.skill-group-title{font-size:12px;color:#bdc3c7;margin-bottom:6px;font-weight:600}
+.skill-tags{display:flex;flex-wrap:wrap;gap:6px}
+.skill-tag{background:#3d566e;color:#bdc3c7;padding:4px 10px;border-radius:20px;font-size:11px;white-space:nowrap;transition:background .2s}
 .skill-tag:hover{background:var(--accent)}
-.cert-item,.hobby-item{font-size:14px;margin-bottom:6px;padding-left:16px;position:relative}
-.cert-item::before,.hobby-item::before{content:'›';position:absolute;left:0;color:var(--accent);font-weight:bold}
+.hobby-item{font-size:14px;margin-bottom:6px;padding-left:16px;position:relative}
+.hobby-item::before{content:'›';position:absolute;left:0;color:var(--accent);font-weight:bold}
 .main{flex:1;padding:40px 48px;background:var(--card-bg)}
 .name{font-size:36px;font-weight:700;color:var(--text-primary);margin-bottom:4px}
-.tagline{font-size:16px;color:var(--text-secondary);margin-bottom:32px;padding-bottom:20px;border-bottom:2px solid var(--main-bg)}
+.tagline{font-size:15px;color:var(--text-secondary);margin-bottom:32px;padding-bottom:20px;border-bottom:2px solid var(--main-bg)}
 .section{margin-bottom:36px}
 .section-title{font-size:20px;font-weight:700;color:var(--text-primary);margin-bottom:16px;padding-left:12px;border-left:4px solid var(--accent)}
 .card{background:var(--card-bg);border-left:4px solid var(--accent);border-radius:8px;padding:20px 24px;margin-bottom:16px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
@@ -30,16 +32,18 @@ body{font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;backgroun
 .card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;flex-wrap:wrap;gap:4px}
 .card-title{font-size:17px;font-weight:600;color:var(--text-primary)}
 .card-subtitle{font-size:14px;color:var(--accent-dark)}
-.card-period{font-size:13px;color:var(--text-secondary);white-space:nowrap}
 .card-desc{font-size:14px;color:var(--text-secondary);line-height:1.8;margin-top:8px}
-.card-desc li{margin-bottom:4px;list-style:none;padding-left:16px;position:relative}
-.card-desc li::before{content:'•';position:absolute;left:0;color:var(--accent)}
 .tech-stack{display:inline-block;font-size:12px;color:var(--accent-dark);background:#eaf2f8;padding:2px 10px;border-radius:12px;margin-top:8px}
 .edu-item{margin-bottom:12px}
 .edu-school{font-size:17px;font-weight:600}
 .edu-detail{font-size:14px;color:var(--text-secondary)}
-.edu-period{font-size:13px;color:var(--text-secondary)}
-.self-eval{font-size:14px;color:var(--text-secondary);line-height:1.8;background:var(--main-bg);padding:16px 20px;border-radius:8px}
+.fun-tags{display:flex;flex-wrap:wrap;gap:8px}
+.fun-tag{display:inline-block;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:500;transition:all .2s;cursor:default}
+.fun-tag:hover{transform:translateY(-2px) scale(1.05);box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.fun-tag:nth-child(3n+1){background:#e3f2fd;color:#1565c0}
+.fun-tag:nth-child(3n+2){background:#fce4ec;color:#c62828}
+.fun-tag:nth-child(3n+3){background:#e8f5e9;color:#2e7d32}
+.self-eval{font-size:15px;color:var(--text-secondary);line-height:1.8;background:var(--main-bg);padding:16px 20px;border-radius:8px;text-align:center;font-style:italic}
 @media(max-width:768px){
 .container{flex-direction:column}
 .sidebar{width:100%;padding:30px 20px}
@@ -54,7 +58,7 @@ body{background:#fff}
 .sidebar{background:#2c3e50!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .card{box-shadow:none;break-inside:avoid}
 .card:hover{transform:none}
-.skill-tag,.tech-stack{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.skill-tag,.tech-stack,.fun-tag{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 </style>
 </head>
@@ -64,64 +68,48 @@ body{background:#fff}
 <div class="avatar">👤</div>
 <div class="sidebar-section">
 <h3>联系方式</h3>
-<div class="contact-item"><span class="icon">📱</span><span>手机（预留）</span></div>
-<div class="contact-item"><span class="icon">✉️</span><span>邮箱（预留）</span></div>
-<div class="contact-item"><span class="icon">🔗</span><span>GitHub（预留）</span></div>
+<div class="contact-item"><span class="icon">📱</span><span>预留手机号</span></div>
+<div class="contact-item"><span class="icon">✉️</span><span>个人邮箱</span></div>
+<div class="contact-item"><span class="icon">🔗</span><span>GitHub主页地址</span></div>
 </div>
 <div class="sidebar-section">
-<h3>技能</h3>
+<h3>赛博黑客装备与工具</h3>
+<div class="skill-group">
+<div class="skill-group-title">网络接入仓（Cyberdeck）</div>
 <div class="skill-tags">
-<span class="skill-tag">Java</span>
-<span class="skill-tag">Python</span>
-<span class="skill-tag">SQL</span>
-<span class="skill-tag">SpringBoot</span>
-<span class="skill-tag">MyBatis</span>
-<span class="skill-tag">Django</span>
-<span class="skill-tag">MySQL</span>
-<span class="skill-tag">Redis</span>
-<span class="skill-tag">Git</span>
-<span class="skill-tag">Linux</span>
-<span class="skill-tag">Postman</span>
+<span class="skill-tag">NetWatch Driver v5</span>
+<span class="skill-tag">军用科技 Paraline</span>
+<span class="skill-tag">荒坂连线 Mk.4</span>
 </div>
 </div>
-<div class="sidebar-section">
-<h3>证书</h3>
-<div class="cert-item">计算机二级</div>
-<div class="cert-item">软考中级软件设计师</div>
+<div class="skill-group">
+<div class="skill-group-title">黑客程序（Daemons / ICE）</div>
+<div class="skill-tags">
+<span class="skill-tag">ICEbreaker 破冰软件</span>
+<span class="skill-tag">目标定位（Ping）</span>
+<span class="skill-tag">记忆抹除</span>
+</div>
+</div>
+<div class="skill-group">
+<div class="skill-group-title">开发与分析义体 / 工具</div>
+<div class="skill-tags">
+<span class="skill-tag">歧路司（Kiroshi）代码调试眼</span>
+</div>
+</div>
 </div>
 <div class="sidebar-section">
 <h3>爱好</h3>
-<div class="hobby-item">技术博客写作</div>
-<div class="hobby-item">开源项目学习</div>
+<div class="hobby-item">爱画抽象 Meme</div>
 </div>
 </aside>
 <main class="main">
-<h1 class="name">蔷薇</h1>
-<p class="tagline">后端开发工程师，3年软件开发经验，深耕服务端开发与接口优化</p>
+<h1 class="name">RoseQ</h1>
+<p class="tagline">夜之城网络黑客（Netrunner）系后端工程师，主打 RAM 永不停转、黑墙屹立不倒</p>
 <section class="section">
 <h2 class="section-title">教育背景</h2>
 <div class="edu-item">
-<div class="edu-school">XX大学</div>
+<div class="edu-school">夜之城大学（Night City University）</div>
 <div class="edu-detail">计算机科学与技术 · 本科</div>
-<div class="edu-period">2017.09 - 2021.06</div>
-</div>
-</section>
-<section class="section">
-<h2 class="section-title">工作经历</h2>
-<div class="card">
-<div class="card-header">
-<div>
-<div class="card-title">后端开发工程师</div>
-<div class="card-subtitle">XX科技有限公司</div>
-</div>
-<div class="card-period">2021.07 - 至今</div>
-</div>
-<ul class="card-desc">
-<li>负责业务后端接口编写、数据库设计与维护</li>
-<li>优化老旧接口，提升接口响应速度40%</li>
-<li>对接前端、测试团队，保障版本按期上线</li>
-<li>编写接口文档，搭建简易自动化测试脚本</li>
-</ul>
 </div>
 </section>
 <section class="section">
@@ -129,17 +117,40 @@ body{background:#fff}
 <div class="card">
 <div class="card-header">
 <div>
-<div class="card-title">电商订单管理系统</div>
-<div class="card-subtitle">支撑商城下单、退款、库存扣减全流程</div>
+<div class="card-title">夜之城黑市高并发订单与契约管理系统</div>
 </div>
 </div>
-<div class="card-desc">支撑日均万单访问</div>
-<span class="tech-stack">Java + SpringBoot + MySQL + Redis</span>
+<div class="card-desc">承载全夜之城高频合约下单、义体退款、黑市库存实时扣减全流程，稳定应对日均万单高并发黑客流量冲击。引入 Redis 分布式锁实现"入侵协议"极速扣减防超卖，搭建"黑墙"级 ICE 限流防刷机制，系统可用性达 99.99%。</div>
+<span class="tech-stack">Redis 分布式锁 · ICE 限流 · 高并发</span>
+</div>
+<div class="card">
+<div class="card-header">
+<div>
+<div class="card-title">军用科技（Militech）战术小队后勤与补给网络调度系统</div>
+</div>
+</div>
+<div class="card-desc">模拟战术小队高频交互下的后勤调度网络，设计高弹性 Redis 缓存补给站降低数据库负担 60%，构建安全熔断防护机制，确保在流量冲撞下后勤数据 100% 顺畅传输。</div>
+<span class="tech-stack">Redis 缓存 · 熔断防护 · 后勤调度</span>
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">荣誉 / 其他</h2>
+<div class="fun-tags">
+<span class="fun-tag">曾与V探讨黑墙级 ICE 防护技术</span>
+<span class="fun-tag">诺贝尔文学奖读者</span>
+<span class="fun-tag">知网收录论文 0 篇</span>
+<span class="fun-tag">腾讯&amp;阿里巴巴股东</span>
+<span class="fun-tag">山姆超市 VIP</span>
+<span class="fun-tag">luckin coffee 资深品鉴师</span>
+<span class="fun-tag">世界500强简历投递者</span>
+<span class="fun-tag">亿万彩票项目参与者</span>
+<span class="fun-tag">前 bilibili 大会员</span>
+<span class="fun-tag">C2驾驶证获得者</span>
 </div>
 </section>
 <section class="section">
 <h2 class="section-title">自我评价</h2>
-<div class="self-eval">逻辑严谨，善于排查线上问题，习惯规范化编码，适配迭代快节奏开发。</div>
+<div class="self-eval">一般路过。</div>
 </section>
 </main>
 </div>
