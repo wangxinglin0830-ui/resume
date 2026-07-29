@@ -107,6 +107,9 @@ body::after{
 .sidebar::after{content:'';position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--neon-cyan),var(--neon-magenta),var(--neon-cyan));box-shadow:0 0 10px var(--neon-cyan)}
 .avatar{width:120px;height:120px;border-radius:50%;background:#1a2f45;display:flex;align-items:center;justify-content:center;font-size:48px;color:#95a5a6;border:3px solid var(--neon-cyan);margin-bottom:20px;box-shadow:0 0 20px rgba(0,240,255,.4),inset 0 0 10px rgba(0,240,255,.1);overflow:hidden;position:relative;z-index:2;animation:neonFlicker 4s ease-in-out infinite}
 .avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.grad-photo{width:100%;border-radius:8px;border:2px solid var(--neon-magenta);overflow:hidden;margin-top:20px;position:relative;z-index:2;box-shadow:0 0 15px rgba(255,0,170,.3)}
+.grad-photo img{width:100%;display:block}
+.grad-photo-label{font-size:11px;text-align:center;color:var(--neon-magenta);margin-top:6px;letter-spacing:1px;text-shadow:0 0 6px rgba(255,0,170,.5);position:relative;z-index:2}
 .sidebar-section{width:100%;margin-top:28px;position:relative;z-index:2}
 .sidebar-section h3{font-size:13px;text-transform:uppercase;letter-spacing:2px;color:var(--neon-cyan);margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid rgba(0,240,255,.2);text-shadow:0 0 8px rgba(0,240,255,.5)}
 .contact-item{display:flex;align-items:center;margin-bottom:10px;font-size:14px;color:#bdc3c7}
@@ -194,7 +197,9 @@ body::after{
 <!-- ===== 主容器 ===== -->
 <div class="container">
 <aside class="sidebar">
-<div class="avatar"><img src="https://qiangwei-resume-20260727.obs.cn-north-4.myhuaweicloud.com/me.png" alt="RoseQ"></div>
+<div class="avatar"><img src="https://qiangwei-resume-20260727.obs.cn-north-4.myhuaweicloud.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260728093822_471_3.jpg" alt="RoseQ"></div>
+<div class="grad-photo"><img src="https://qiangwei-resume-20260727.obs.cn-north-4.myhuaweicloud.com/me.png" alt="毕业照"></div>
+<div class="grad-photo-label">🎓 毕业照</div>
 <div class="sidebar-section">
 <h3>联系方式</h3>
 <div class="contact-item"><span class="icon">📱</span><span>预留手机号</span></div>
