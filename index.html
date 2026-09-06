@@ -198,6 +198,22 @@ body::after{
 .grad-photo-fixed .grad-corner.tr{top:-2px;right:-2px;border-left:none;border-bottom:none}
 .grad-photo-fixed .grad-corner.bl{bottom:-2px;left:-2px;border-right:none;border-top:none}
 .grad-photo-fixed .grad-corner.br{bottom:-2px;right:-2px;border-left:none;border-top:none}
+/* ===== 作品介绍区 ===== */
+.work-card{background:var(--card-bg);border-left:4px solid var(--neon-magenta);border-radius:8px;padding:20px 24px;margin-bottom:16px;box-shadow:var(--shadow);transition:all .4s cubic-bezier(.34,1.56,.64,1);position:relative;overflow:hidden}
+.work-card::before{content:'';position:absolute;top:0;right:0;width:60px;height:60px;background:radial-gradient(circle,rgba(255,0,170,.06) 0%,transparent 70%);pointer-events:none}
+.work-card::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--neon-magenta),var(--neon-cyan),transparent);transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
+.work-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(255,0,170,.15),0 4px 12px rgba(0,0,0,.08);border-left-color:var(--neon-cyan)}
+.work-card:hover::after{transform:scaleX(1)}
+.work-card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;flex-wrap:wrap;gap:4px}
+.work-card-title{font-size:17px;font-weight:600;color:var(--text-primary);transition:color .3s}
+.work-card:hover .work-card-title{color:var(--neon-magenta)}
+.work-card-desc{font-size:14px;color:var(--text-secondary);line-height:1.8;margin-top:8px}
+.work-link{display:inline-flex;align-items:center;gap:6px;margin-top:12px;padding:8px 18px;border-radius:6px;background:linear-gradient(90deg,rgba(0,240,255,.1),rgba(255,0,170,.1));border:1px solid rgba(0,240,255,.25);color:var(--accent-dark);text-decoration:none;font-size:13px;font-weight:600;transition:all .3s;position:relative;overflow:hidden}
+.work-link::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(0,240,255,.2),transparent);background-size:200% 100%;animation:shimmer 3s linear infinite;opacity:0;transition:opacity .3s}
+.work-link:hover{background:linear-gradient(90deg,rgba(0,240,255,.2),rgba(255,0,170,.2));border-color:var(--neon-cyan);box-shadow:0 0 12px rgba(0,240,255,.4);transform:translateX(4px)}
+.work-link:hover::before{opacity:1}
+.work-link .arrow{transition:transform .3s}
+.work-link:hover .arrow{transform:translateX(4px)}
 /* ===== 响应式 ===== */
 @media(max-width:1200px){.deco-left,.deco-right{display:none}}
 @media(max-width:900px){
@@ -329,6 +345,39 @@ body::after{
 </div>
 <div class="card-desc">模拟战术小队高频交互下的后勤调度网络，设计高弹性 Redis 缓存补给站降低数据库负担 60%，构建安全熔断防护机制，确保在流量冲撞下后勤数据 100% 顺畅传输。</div>
 <span class="tech-stack">Redis 缓存 · 熔断防护 · 后勤调度</span>
+</div>
+</section>
+<section class="section">
+<h2 class="section-title">作品介绍</h2>
+<div class="work-card">
+<div class="work-card-header">
+<div>
+<div class="work-card-title">康护 · 互联网社区养老服务平台</div>
+</div>
+</div>
+<div class="work-card-desc">基于"康护"理念的互联网社区养老服务平台介绍网站，涵盖项目简介、行业背景分析、产品与服务体系（健康管理、老人监护、其他服务）、商业模式、发展规划、财务分析及团队介绍等完整模块，全方位展示智慧养老解决方案。</div>
+<span class="tech-stack">智慧养老 · 服务平台 · 响应式网页</span>
+<a class="work-link" href="https://wangxinglin0830-ui.github.io/kanghu/" target="_blank" rel="noopener noreferrer"><span>访问作品</span><span class="arrow">→</span></a>
+</div>
+<div class="work-card">
+<div class="work-card-header">
+<div>
+<div class="work-card-title">康护 · 智慧养老 App</div>
+</div>
+</div>
+<div class="work-card-desc">康护智慧养老平台的移动端 App（H5）原型，包含实时体征监测（心率/血压/血氧/步数）、一键呼救、快捷服务入口、健康数据分析、线上问诊与送药上门、关怀消息、家属远程监护等功能，模拟完整的长者端使用体验。</div>
+<span class="tech-stack">移动端H5 · 健康监测 · 紧急救援</span>
+<a class="work-link" href="https://wangxinglin0830-ui.github.io/kanghu/app.html" target="_blank" rel="noopener noreferrer"><span>访问作品</span><span class="arrow">→</span></a>
+</div>
+<div class="work-card">
+<div class="work-card-header">
+<div>
+<div class="work-card-title">拾音赴序 · 4Key 音游</div>
+</div>
+</div>
+<div class="work-card-desc">一款支持导入本地歌曲（mp3/wav/ogg/flac）自动生成谱面的 4 键音游。包含 EZ/NM/HD 三档难度、DFJK 四轨判定、Perfect/Good/Bad/Miss 四级评分、连击与评级系统（SSS~D），以及完整的新手教学引导。</div>
+<span class="tech-stack">音游 · 谱面生成 · Web Audio</span>
+<a class="work-link" href="https://wangxinglin0830-ui.github.io/musicgame/" target="_blank" rel="noopener noreferrer"><span>访问作品</span><span class="arrow">→</span></a>
 </div>
 </section>
 <section class="section">
